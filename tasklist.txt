@@ -1,0 +1,10 @@
+Features for 1st problem:
+
+first time users benefit
+similar to nykaa
+physical health
+mental health
+consultants
+newsletters
+login page
+Young users --> more recommendations --> record age while signing up.
