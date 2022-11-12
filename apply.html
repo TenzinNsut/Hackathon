@@ -38,7 +38,7 @@
                 <li><a  href="/">Home</a></li>
                 <li><a class="selected" href="/apply">Apply</a></li>
                 <li><a href="">Services</a></li>
-                <li><a href="">About US</a></li>
+                <li><a href="">About us</a></li>
                 
                 <button>Login</button>
                 <button>SignUp</button>
@@ -46,29 +46,35 @@
            
         </div>
     </header>
+</section>
+
+    <div class="container">
+        
+        <div class="img-box">
+            <img src="images/applicant.svg" alt="">
+        </div>
 
 
-            <div class="content" >
+        <div class="content" >
 
             <form action="/apply" method="post" enctype="multipart/form-data" class="main-container">
-                <label id="send">Apply here</label>
+                <label id="apply">Apply</label>
 
                 <input type="text" name="name" id="name" placeholder="Your Full Name">
                 <input type="text" name="email" id="email" placeholder="Your email" >
                 <input type="tel" name="phone" id="phone" placeholder="Your mobile number">
                 <input type="text" name="speciality" id="speciality" placeholder="Your speciality">
                 <input type="number" name="experience" id="experience" placeholder="Your experience">
-                <label for="file">Upload certificate</label>
-                <input type="file" name="image" required id="file">
+                <label for="file" style="color: #2f2d2d; text-align:center;">Upload certificate</label>
+                <input style="align-self:center;" type="file" name="image" required id="file">
                 <button type="submit" id="btn">SUBMIT</button>
             </form>
 
             </div>
-        
+
     </div>
+
     
-    
-</section>
     
     
 </body>
