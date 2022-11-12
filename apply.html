@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/apply.css">
+
+    <script src="button.js" defer></script>
+    <script src="app.js" defer></script>
+    <title>Apply</title>
+</head>
+
+
+<body>
+
+
+    <section class="section-one">
+       
+      <!-- Navigation Bar -->
+      <header class="navbar">
+        <div class="img-container">
+         <img src="images/logo.png" alt="logo" >
+        </div> 
+        
+        <!-- hamburger menu -->
+        <a class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+
+
+
+        <div class="navbar-links">
+            <ul>
+                <li><a  href="/">Home</a></li>
+                <li><a class="selected" href="/apply">Apply</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">About US</a></li>
+                
+                <button>Login</button>
+                <button>SignUp</button>
+            </ul>
+           
+        </div>
+    </header>
+
+
+            <div class="content" >
+
+            <form action="/apply" method="post" enctype="multipart/form-data" class="main-container">
+                <label id="send">Apply here</label>
+
+                <input type="text" name="name" id="name" placeholder="Your Full Name">
+                <input type="text" name="email" id="email" placeholder="Your email" >
+                <input type="tel" name="phone" id="phone" placeholder="Your mobile number">
+                <input type="text" name="speciality" id="speciality" placeholder="Your speciality">
+                <input type="number" name="experience" id="experience" placeholder="Your experience">
+                <label for="file">Upload certificate</label>
+                <input type="file" name="image" required id="file">
+                <button type="submit" id="btn">SUBMIT</button>
+            </form>
+
+            </div>
+        
+    </div>
+    
+    
+</section>
+    
+    
+</body>
+</html>
