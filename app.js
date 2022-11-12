@@ -40,8 +40,59 @@ app.get('/apply', function (req, res) {
     res.sendFile(__dirname + "/apply.html");
 })
 
+// ------------------H O M E - P A G E---------------------
 
-// APPLICANTS PAGE
+app.post('/', function (req, res) { 
+
+    let name = req.body.name;
+    let email = req.body.email
+    let message = req.body.message
+
+    let format = `
+    <h1>Users Thought</h1>
+    <h3>Users Details</h3>
+    <ul>
+    <li>Name: ${name}</li>
+    <li>Email: ${email}</li>
+    </ul>
+    <h3>Message</h3>
+    <p>${message}</p>
+    `;
+
+    
+    let msg = {
+        form: `${email}`,
+        to: "hackathon.official4@gmail.com",
+        subject: "Users thoughts",
+        html: format
+    }
+
+    
+    nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: "hackathon.official4@gmail.com",
+            pass: 'ugvypcbqhqjikmxp'
+        },
+
+        port: 465,
+        host: 'smtp.gmail.com',
+    })
+
+    .sendMail(msg, (err, respose) => {
+        if (err) {
+            res.sendFile(__dirname + '/fail.html');
+        } else {
+            res.sendFile(__dirname + '/success.html');
+        }
+    });
+
+
+});
+
+
+
+// ------------------APPLICANTS PAGE-----------------------
 app.post('/apply', function (req, res) {
   
 
@@ -49,14 +100,14 @@ app.post('/apply', function (req, res) {
         if (err) {
             return res.sendFile(__dirname + "/fail.html");
         } else {
-            const name = req.body.name;
-            const email = req.body.email
-            const phone = req.body.phone;
-            const speciality = req.body.speciality;
-            const experience = req.body.experience;
+            let name = req.body.name;
+            let email = req.body.email
+            let phone = req.body.phone;
+            let speciality = req.body.speciality;
+            let experience = req.body.experience;
 
-            const path = req.file.path;
-            const format = `
+            let path = req.file.path;
+            let format = `
             <h1>New Application Request</h1>
        
             <h3>Applicants Details</h3>
@@ -110,9 +161,10 @@ app.post('/apply', function (req, res) {
             })
         }
     });
-
     
 });
+
+
 
 
 
